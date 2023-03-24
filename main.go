@@ -13,25 +13,6 @@ type model struct {
 }
 
 var (
-	modelStyle = lipgloss.NewStyle().
-			Width(15).
-			Height(5).
-			Align(lipgloss.Center, lipgloss.Center).
-			BorderStyle(lipgloss.HiddenBorder())
-	focusedModelStyle = lipgloss.NewStyle().
-				Width(15).
-				Height(5).
-				Align(lipgloss.Center, lipgloss.Center).
-				BorderStyle(lipgloss.NormalBorder()).
-				BorderForeground(lipgloss.Color("69"))
-
-	historyStyle = lipgloss.NewStyle().
-			Align(lipgloss.Left).
-			Foreground(lipgloss.Color("#FAFAFA")).
-			Margin(1, 3, 0, 0).
-			Padding(1, 2).
-			Height(19)
-
 	style = lipgloss.NewStyle().Border(lipgloss.ThickBorder(), true)
 )
 
