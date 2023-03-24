@@ -8,7 +8,7 @@ import (
 	"todo-tui-prototype/tasklist"
 )
 
-type model struct {
+type mainModel struct {
 	tl tasklist.Model
 }
 
@@ -16,11 +16,11 @@ var (
 	style = lipgloss.NewStyle().Border(lipgloss.ThickBorder(), true)
 )
 
-func (m model) Init() tea.Cmd {
+func (m mainModel) Init() tea.Cmd {
 	return nil
 }
 
-func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+func (m mainModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
 		switch msg.String() {
@@ -32,13 +32,13 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	return m, nil
 }
 
-func (m model) View() string {
+func (m mainModel) View() string {
 	s := style.Render(m.tl.View())
 	return s
 }
 
-func initialModel() model {
-	return model{tl: tasklist.New()}
+func initialModel() mainModel {
+	return mainModel{tl: tasklist.New()}
 }
 
 func main() {
